@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GuruCipta – Generator Soal Otomatis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>GuruCipta – Generator Soal Otomatis</h1>
+
+    <div class="form-group">
+      <label for="mapel">Mata Pelajaran:</label>
+      <select id="mapel" onchange="updateJudul()">
+        <option disabled selected>-- Pilih Mapel --</option>
+        <option>Matematika</option>
+        <option>IPAS</option>
+        <option>Bahasa Indonesia</option>
+        <option>PPKn</option>
+        <option>Seni Rupa</option>
+        <option>Seni Musik</option>
+        <option>Seni Tari</option>
+        <option>Seni Teater</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="materi">Materi/Topik:</label>
+      <input type="text" id="materi" placeholder="Contoh: Energi Alternatif">
+    </div>
+
+    <div class="form-group">
+      <label for="jumlahSoal">Jumlah Soal:</label>
+      <input type="number" id="jumlahSoal" value="5" min="1">
+    </div>
+
+    <div class="form-group">
+      <label for="jenisSoal">Jenis Soal:</label>
+      <select id="jenisSoal">
+        <option>Isian Singkat</option>
+        <option>Pilihan Ganda</option>
+        <option>Essay</option>
+        <option>Teka Teki Silang</option>
+        <option>Pencarian Kata</option>
+        <option>Grafik</option>
+        <option>Tabel</option>
+        <option>Bangun Datar</option>
+        <option>Bangun Ruang</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="gambarUrl">URL Gambar Stimulus (Opsional):</label>
+      <input type="text" id="gambarUrl" placeholder="https://...">
+    </div>
+
+    <button onclick="generateSoal()">📝 Buat Soal</button>
+    <button onclick="exportPDF()">📄 Ekspor ke PDF</button>
+
+    <hr>
+
+    <div id="output"></div>
+  </div>
+
+  <!-- ✅ SCRIPTS - PENTING: diletakkan sebelum </body> -->
+  <script src="libs/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script src="banksoal.js"></script>
+</body>
+</html>
