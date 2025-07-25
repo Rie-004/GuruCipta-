@@ -1,0 +1,2 @@
+# GuruCipta-
+aplikasi guru
